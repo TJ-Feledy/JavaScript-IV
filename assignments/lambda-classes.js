@@ -25,7 +25,7 @@ class Instructor extends Person {
         console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
     calGrade(student) {
-        student.grade = student.grade + (Math.floor(Math.random() * 20) - 8);
+        student.grade = student.grade + (Math.floor(Math.random() * 20) - 10);
         console.log(student.grade);
     }
 }
@@ -48,6 +48,14 @@ class Student extends Person {
     }
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}.`)
+    }
+    graduate() {
+        if (this.grade >= 70) {
+            console.log(`You have a ${this.grade}%, you are eligible for graduation!`)
+        }
+        else {
+            console.log(`You have a ${this.grade}%, you are ineligible for graduation.`)
+        }
     }
 }
 
@@ -144,5 +152,7 @@ willard.debugsCode(billy, 'Classes');
 console.log(sam.catchPhrase);
 willard.speak();
 ken.calGrade(billy);
-ken.calGrade(billy);
 willard.calGrade(billy);
+billy.graduate();
+willard.calGrade(sarah);
+sarah.graduate();
