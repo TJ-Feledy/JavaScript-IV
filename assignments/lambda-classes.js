@@ -24,6 +24,10 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}.`);
     }
+    calGrade(student) {
+        student.grade = student.grade + (Math.floor(Math.random() * 20) - 8);
+        console.log(student.grade);
+    }
 }
 
 class Student extends Person {
@@ -32,6 +36,7 @@ class Student extends Person {
         this.previousBackground = attr.previousBackground;
         this.className = attr.className;
         this.favSubjects = attr.favSubjects;
+        this.grade = 80;
     }
     listsSubjects() {
         this.favSubjects.forEach(element => {
@@ -138,3 +143,6 @@ sam.standUp('webpt6_fri');
 willard.debugsCode(billy, 'Classes');
 console.log(sam.catchPhrase);
 willard.speak();
+ken.calGrade(billy);
+ken.calGrade(billy);
+willard.calGrade(billy);
